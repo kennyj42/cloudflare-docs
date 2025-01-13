@@ -1,0 +1,27 @@
+---
+pcx_content_type: concept
+title: Custom rules
+sidebar:
+  order: 5
+---
+
+import { Render } from "~/components";
+
+<Render file="custom-rules-intro" product="waf" />
+
+Custom rules are evaluated in order, and some actions like _Block_ will stop the evaluation of other rules. For more details on actions and their behavior, refer to the [actions reference](/ruleset-engine/rules-language/actions/).
+
+:::note[Did you migrate from Cloudflare Firewall Rules?]
+
+Refer to the [migration guide](/waf/reference/migration-guides/firewall-rules-to-custom-rules/#main-differences) to learn more about the differences between firewall rules and custom rules.
+:::
+
+To define sets of custom rules that apply to more than one zone, use [custom rulesets](/waf/account/custom-rulesets/), which require an Enterprise plan with a paid add-on.
+
+---
+
+## Next steps
+
+To create custom rules using the Cloudflare dashboard, refer to [Create custom rules in the dashboard](/waf/custom-rules/create-dashboard/).
+
+You can also create custom rules using the [Rulesets API](/ruleset-engine/rulesets-api/). Refer to [Create custom rules via API](/waf/custom-rules/create-api/) for more information.

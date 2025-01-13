@@ -1,0 +1,11 @@
+name: Access
+
+product:
+  title: Access
+  group: Cloudflare One
+  url: /cloudflare-one/policies/access/
+
+meta:
+  title: Cloudflare Access
+  description: Determine who can reach your application using policies.
+  author: "@cloudflare"

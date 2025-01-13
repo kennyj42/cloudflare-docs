@@ -1,0 +1,86 @@
+---
+import { z } from "astro:schema";
+import { indexPlans } from "~/util/plans";
+import { marked } from "marked";
+import GlossaryTooltip from "~/components/GlossaryTooltip.astro";
+
+const markdown = (content: any) => {
+	if (typeof content !== "string") return content;
+
+	return marked.parse(content);
+};
+
+type Props = z.infer<typeof props>;
+
+const props = z
+	.object({
+		id: z.string(),
+	})
+	.strict();
+
+const { id } = props.parse(Astro.props);
+
+// TODO: improve product features types
+const plan = (await indexPlans(id)) as any;
+
+const features: any[] = Object.values(plan.properties);
+
+const hasFree = features.some((x) => x.free);
+const hasPro = features.some((x) => x.pro);
+const hasBiz = features.some((x) => x.biz);
+const hasEnt = features.some((x) => x.ent);
+const hasEntPlus = features.some((x) => x.ent_plus);
+---
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			{hasFree && <th>Free</th>}
+			{hasPro && <th>Pro</th>}
+			{hasBiz && <th>Business</th>}
+			{hasEnt && <th>Enterprise</th>}
+			{hasEntPlus && <th>{plan.ent_plus}</th>}
+		</tr>
+	</thead>
+	<tbody>
+		{
+			features.map((feature) => {
+				const renderTitle = (title: string) => {
+					const placeholder = "[[GLOSSARY_TOOLTIP_SNIPPETS_SUBREQUEST]]";
+
+					if (title.includes(placeholder)) {
+						const [beforePlaceholder, afterPlaceholder] =
+							title.split(placeholder);
+
+						return (
+							<>
+								{beforePlaceholder}
+								<GlossaryTooltip
+									term="Snippets subrequest"
+									prepend="A subrequest is "
+								>
+									subrequests
+								</GlossaryTooltip>
+								{afterPlaceholder}
+							</>
+						);
+					}
+
+					return markdown(title);
+				};
+
+				return (
+					<tr>
+						<th set:html={renderTitle(feature.title)} />
+						{hasFree && <td set:html={markdown(feature.free)} />}
+						{hasPro && <td set:html={markdown(feature.pro)} />}
+						{hasBiz && <td set:html={markdown(feature.biz)} />}
+						{hasEnt && <td set:html={markdown(feature.ent)} />}
+						{hasEntPlus && <td set:html={markdown(feature.ent_plus)} />}
+					</tr>
+				);
+			})
+		}
+	</tbody>
+</table>

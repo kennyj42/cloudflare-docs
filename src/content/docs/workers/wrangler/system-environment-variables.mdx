@@ -1,0 +1,86 @@
+---
+pcx_content_type: configuration
+title: System environment variables
+head: []
+description: Local environment variables that can change Wrangler's behavior.
+
+---
+
+import { Render, Type, MetaInfo } from "~/components"
+
+System environment variables are local environment variables that can change Wrangler's behavior. There are three ways to set system environment variables:
+
+1. Create an `.env` file in your project directory. Set the values of your environment variables in your [`.env`](/workers/wrangler/system-environment-variables/#example-env-file) file. This is the recommended way to set these variables, as it persists the values between Wrangler sessions.
+
+2. Inline the values in your Wrangler command. For example, `WRANGLER_LOG="debug" npx wrangler deploy` will set the value of `WRANGLER_LOG` to `"debug"` for this execution of the command.
+
+3. Set the values in your shell environment. For example, if you are using Z shell, adding `export CLOUDFLARE_API_TOKEN=...` to your `~/.zshrc` file will set this token as part of your shell configuration.
+
+## Supported environment variables
+
+Wrangler supports the following environment variables:
+
+
+
+* `CLOUDFLARE_ACCOUNT_ID` <Type text="string" /> <MetaInfo text="optional" />
+
+  * The [account ID](/fundamentals/setup/find-account-and-zone-ids/) for the Workers related account.
+
+* `CLOUDFLARE_API_TOKEN` <Type text="string" /> <MetaInfo text="optional" />
+
+  * The [API token](/fundamentals/api/get-started/create-token/) for your Cloudflare account, can be used for authentication for situations like CI/CD, and other automation.
+
+* `CLOUDFLARE_API_KEY` <Type text="string" /> <MetaInfo text="optional" />
+
+  * The API key for your Cloudflare account, usually used for older authentication method with `CLOUDFLARE_EMAIL=`.
+
+* `CLOUDFLARE_EMAIL` <Type text="string" /> <MetaInfo text="optional" />
+
+  * The email address associated with your Cloudflare account, usually used for older authentication method with `CLOUDFLARE_API_KEY=`.
+
+* `WRANGLER_SEND_METRICS` <Type text="string" /> <MetaInfo text="optional" />
+
+  * Options for this are `true` and `false`. Defaults to `true`. Controls whether Wrangler can send anonymous usage data to Cloudflare for this project. You can learn more about this in our [data policy](https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md).
+
+* `WRANGLER_HYPERDRIVE_LOCAL_CONNECTION_STRING_<BINDING_NAME>`<Type text="string" /> <MetaInfo text="optional" />
+
+  * The [local connection string](/hyperdrive/configuration/local-development/) for your database to use in local development with [Hyperdrive](/hyperdrive/). For example, if the binding for your Hyperdrive is named `PROD_DB`, this would be `WRANGLER_HYPERDRIVE_LOCAL_CONNECTION_STRING_PROD_DB="postgres://user:password@127.0.0.1:5432/testdb"`. Each Hyperdrive is uniquely distinguished by the binding name.
+
+* `CLOUDFLARE_API_BASE_URL` <Type text="string" /> <MetaInfo text="optional" />
+
+  * The default value is `"https://api.cloudflare.com/client/v4"`.
+
+* `WRANGLER_LOG` <Type text="string" /> <MetaInfo text="optional" />
+
+  * Options for Logging levels are `"none"`, `"error"`, `"warn"`, `"info"`, `"log"` and `"debug"`. Levels are case-insensitive and default to `"log"`. If an invalid level is specified, Wrangler will fallback to the default. Logs can include requests to Cloudflare's API, any usage data being collected, and more verbose error logs.
+
+* `FORCE_COLOR` <Type text="string" /> <MetaInfo text="optional" />
+
+  * By setting this to `0`, you can disable Wrangler's colorised output, which makes it easier to read with some terminal setups. For example, `FORCE_COLOR=0`.
+
+
+
+
+
+## Example `.env` file
+
+The following is an example `.env` file:
+
+```bash
+CLOUDFLARE_ACCOUNT_ID=<YOUR_ACCOUNT_ID_VALUE>
+CLOUDFLARE_API_TOKEN=<YOUR_API_TOKEN_VALUE>
+CLOUDFLARE_EMAIL=<YOUR_EMAIL>
+WRANGLER_SEND_METRICS=true
+CLOUDFLARE_API_BASE_URL=https://api.cloudflare.com/client/v4
+WRANGLER_LOG=debug
+```
+
+## Deprecated global variables
+
+The following variables are deprecated. Use the new variables listed above to prevent any issues or unwanted messaging.
+
+* `CF_ACCOUNT_ID`
+* `CF_API_TOKEN`
+* `CF_API_KEY`
+* `CF_EMAIL`
+* `CF_API_BASE_URL`

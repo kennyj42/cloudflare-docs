@@ -1,0 +1,49 @@
+---
+title: Badges
+---
+
+import { Badge } from "~/components";
+
+Badges are a built-in component provided by [Starlight](https://starlight.astro.build/guides/components/#bades). Use them to indicate a product is in beta, for example.
+
+:::note
+
+For guidance on using badges inline with other text, refer to [Inline badges](/style-guide/components/inline-badge/).
+
+:::
+
+## Component
+
+```mdx live
+import { Badge } from "~/components";
+
+<Badge text="New" variant="tip" size="small" />
+<Badge text="Deprecated" variant="caution" size="medium" />
+<Badge text="Starlight" variant="note" size="large" />
+<Badge text="Custom" variant="success" style={{ fontStyle: "italic" }} />
+```
+
+## Sidebar
+
+Badges can be added to the sidebar via page frontmatter.
+
+```mdx
+---
+title: Hello World
+sidebar:
+  badge:
+    variant: tip
+    text: New
+---
+```
+
+If you want to add the Beta badge to a product, omit the `variant:` entry:
+
+```mdx
+---
+title: Hello World
+sidebar:
+  badge:
+    text: Beta
+---
+```

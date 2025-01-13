@@ -1,0 +1,9 @@
+User-agent: *
+
+Disallow: /client-ip-geolocation
+Disallow: /plans/
+Disallow: /constellation
+Disallow: /cdn-cgi/
+Disallow: /google-tag-first-party-mode/
+
+Sitemap: https://developers.cloudflare.com/sitemap-index.xml
