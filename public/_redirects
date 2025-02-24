@@ -96,6 +96,9 @@
 /access/ssh/short-live-cert-server/ /cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/ 301
 /access/ssh/ssh-guide/ /cloudflare-one/connections/connect-networks/use-cases/ssh/ 301
 
+# agents
+/agents/build/prompts/ /workers/get-started/prompting/ 301
+
 # ai
 /ai/ /use-cases/ai/ 301
 
