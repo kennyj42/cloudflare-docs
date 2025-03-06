@@ -253,19 +253,19 @@ String key-value pairs for Cookies. This field is populated based on [Logpush Cu
 
 Type: `bool`
 
-True if the request looped through multiple zones on the Cloudflare edge. This is considered an orange to orange (o2o) request.
+True if the request looped through multiple zones on the Cloudflare edge. This is considered an orange to orange (O2O) request.
 
 ## EdgeColoCode
 
 Type: `string`
 
-IATA airport code of data center that received the request.
+IATA airport code of the data center that received the request.
 
 ## EdgeColoID
 
 Type: `int`
 
-Cloudflare edge colo id.
+Cloudflare edge data center ID.
 
 ## EdgeEndTimestamp
 
@@ -511,13 +511,13 @@ Array of security products that matched the request. The same product can appear
 
 Type: `int`
 
-The Cloudflare datacenter used to connect to the origin server if Argo Smart Routing is used.
+The Cloudflare data center used to connect to the origin server if Argo Smart Routing is used.
 
 ## UpperTierColoID
 
 Type: `int`
 
-The "upper tier" datacenter that was checked for a cached copy if Tiered Cache is used.
+The "upper tier" data center that was checked for a cached copy if Tiered Cache is used.
 
 ## WAFAttackScore
 
@@ -559,31 +559,31 @@ WAF score for an XSS attack.
 
 Type: `int`
 
-Amount of time in microseconds spent executing a worker, if any.
+Amount of time in microseconds spent executing a Worker, if any.
 
 ## WorkerScriptName
 
 Type: `string`
 
-The worker script name that made the request.
+The Worker script name that made the request.
 
 ## WorkerStatus
 
 Type: `string`
 
-Status returned from worker daemon.
+Status returned from Worker daemon.
 
 ## WorkerSubrequest
 
 Type: `bool`
 
-Whether or not this request was a worker subrequest.
+Whether or not this request was a Worker subrequest.
 
 ## WorkerSubrequestCount
 
 Type: `int`
 
-Number of subrequests issued by a worker when handling this request.
+Number of subrequests issued by a Worker when handling this request.
 
 ## WorkerWallTimeUs
 
@@ -595,4 +595,4 @@ The elapsed time in microseconds between the start of a Worker invocation, and w
 
 Type: `string`
 
-The human-readable name of the zone (e.g. 'cloudflare.com').
+The human-readable name of the zone (for example, 'cloudflare.com').
