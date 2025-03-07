@@ -3,7 +3,8 @@ pcx_content_type: concept
 title: Transform videos
 sidebar:
   order: 5
-
+  badge:
+    text: Beta
 ---
 
 Media Transformations let you optimize and manipulate videos stored _outside_ of the Cloudflare Stream. Transformed videos and images are served from one of your zones on Cloudflare.
@@ -28,7 +29,7 @@ To enable transformations on your zone:
 You can convert and resize videos by requesting them via a specially-formatted URL, without writing any code. The URL format is:
 
 ```
-https://example.com/media/<OPTIONS>/<SOURCE-VIDEO>
+https://example.com/cdn-cgi/media/<OPTIONS>/<SOURCE-VIDEO>
 ```
 
 - `example.com`: Your website or zone on Cloudflare, with Transformations enabled.
@@ -39,7 +40,7 @@ https://example.com/media/<OPTIONS>/<SOURCE-VIDEO>
 For example, this URL will source an HD video from an R2 bucket, shorten it, crop and resize it as a square, and remove the audio.
 
 ```
-https://example.com/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=crop,audio=false/https://pub-8613b7f94d6146408add8fefb52c52e8.r2.dev/aus-mobile-demo.mp4
+https://example.com/cdn-cgi/media/mode=video,time=5s,duration=5s,width=500,height=500,fit=crop,audio=false/https://pub-8613b7f94d6146408add8fefb52c52e8.r2.dev/aus-mobile-demo.mp4
 ```
 
 The result is an MP4 that can be used in an HTML video element without a player library.
