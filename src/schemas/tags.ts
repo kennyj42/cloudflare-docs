@@ -17,6 +17,7 @@ const frameworks: Array<object> = [
 	{ label: "Next.js", variants: ["nextjs"] },
 	{ label: "Node.js", variants: ["node", "nodejs"] },
 	{ label: "Nuxt" },
+	{ label: "Remix" },
 	{ label: "Ruby", variants: ["rb", "ruby on rails"] },
 	{ label: "Svelte" },
 	{ label: "SvelteKit" },
@@ -27,12 +28,14 @@ const integrations: Array<object> = [
 	{ label: "Azure", variants: ["Microsoft Azure", "MS Azure"] },
 	{ label: "AWS", variants: ["Amazon Web Services"] },
 	{ label: "GCP", variants: ["Google Cloud", "Google Cloud Platform"] },
+	{ label: "Google" },
 	{ label: "G Suite Group", variants: ["gsuite", "g suite"] },
 	{ label: "GitHub" },
 	{
 		label: "Microsoft Entra ID",
 		variants: ["AzureAD", "Azure Active Directory", "MS Entra ID", "Entra ID"],
 	},
+	{ label: "Microsoft" },
 	{ label: "Postgres", variants: ["PostgresSQL"] },
 	{ label: "S3" },
 	{ label: "Sentry" },
@@ -57,8 +60,14 @@ const languages: Array<object> = [
 	{ label: "WebAssembly", variants: ["Web Assembly", "wasm"] },
 ];
 
+const product_features: Array<object> = [
+	{ label: "Web Crypto", variants: ["webcrypto"] },
+	{ label: "RPC" },
+];
+
 const protocols: Array<object> = [
 	{ label: "FTP", variants: ["file transfer protocol", "ftps"] },
+	{ label: "ICMP" },
 	{ label: "IPsec" },
 	{ label: "IPv4" },
 	{ label: "IPv6" },
@@ -75,13 +84,14 @@ const protocols: Array<object> = [
 	{ label: "SFTP" },
 	{ label: "SSH" },
 	{ label: "TCP" },
+	{ label: "TLS" },
 	{ label: "UDP" },
 	{ label: "WebSockets", variants: ["websocket"] },
 	{ label: "Wireguard" },
 ];
 
 const operating_systems: Array<object> = [
-	{ label: "Android" },
+	{ label: "Android", variants: ["ChromeOS"] },
 	{ label: "iOS" },
 	{ label: "Linux" },
 	{ label: "MacOS", variants: ["OS X"] },
@@ -89,6 +99,7 @@ const operating_systems: Array<object> = [
 ];
 
 const use_cases: Array<object> = [
+	{ label: "AI" },
 	{ label: "Authentication", variants: ["auth"] },
 	{ label: "A/B testing", variants: ["ab test"] },
 	{ label: "Caching", variants: ["cache"] },
@@ -98,7 +109,6 @@ const use_cases: Array<object> = [
 	{ label: "Debugging", variants: ["debug", "troubleshooting"] },
 	{ label: "Forms" },
 	{ label: "Geolocation" },
-	{ label: "HTMLRewriter" },
 	{ label: "Headers", variants: ["header"] },
 	{ label: "Localization" },
 	{ label: "Logging" },
@@ -118,6 +128,7 @@ export const tags = {
 	frameworks,
 	integrations,
 	languages,
+	product_features,
 	protocols,
 	operating_systems,
 	use_cases,
