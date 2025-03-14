@@ -17,9 +17,7 @@ Internal DNS zones do not get assigned Cloudflare nameservers and can only be qu
 
 ## Reference zones
 
-During an [internal DNS query resolution](/dns/internal-dns/#architecture-overview), if no internal record is found within a matching internal zone, Cloudflare will check if the matching internal zone is referencing another internal zone. Successive references can be followed with a maximum of five references in a chain.
-
-Each internal zone can only reference one other zone, but the same zone can be referenced by multiple internal zones. Public zones cannot be used as reference zones.
+<Render file="reference-zone-intro" />
 
 Refer to [Set up reference zones](/dns/internal-dns/internal-zones/reference-zones/) for step-by-step instructions.
 
