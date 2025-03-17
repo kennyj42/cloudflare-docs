@@ -777,7 +777,7 @@
 /learning-paths/secure-o365-email/ /learning-paths/secure-o365-email/concepts/ 301
 /learning-paths/workers/ /learning-paths/workers/concepts/ 301
 /learning-paths/zero-trust-web-access/ /learning-paths/zero-trust-web-access/concepts/ 301
-
+/learning-paths/application-security/default-traffic-security/security-level/ /learning-paths/application-security/default-traffic-security/browser-integrity/ 301
 
 # more redirects in the /dynamic/ section
 
