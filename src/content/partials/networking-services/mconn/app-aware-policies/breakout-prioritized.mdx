@@ -66,7 +66,7 @@ The traffic for the application you chose {props.whatHappensApp}.
 
 </TabItem> <TabItem label="API">
 
-<Render file="connector/account-id-api-key" />
+<Render file="account-id-api-key" product="networking-services" />
 
 1. Send a `GET` [request](/api/resources/magic_transit/subresources/apps/methods/list/) to list the applications associated with an account.
 
@@ -133,7 +133,7 @@ The traffic for the application you chose {props.whatHappensApp}.
 
 </TabItem> <TabItem label="API">
 
-<Render file="connector/account-id-api-key" />
+<Render file="account-id-api-key" product="networking-services" />
 
 1. Send a [`GET` request](/api/resources/magic_transit/subresources/apps/methods/list/) to list the applications associated with a site.
 
@@ -183,7 +183,7 @@ The traffic for the application you chose {props.whatHappensApp}.
 { props.magicWord === "breakout" && (
 	<>
 	<AnchorHeading title="WARP traffic" depth={2} />
-		<Render file="connector/app-aware-policies/warp-traffic" />
+		<Render file="mconn/app-aware-policies/warp-traffic" product="networking-services" />
 	</>
 	)
 }
