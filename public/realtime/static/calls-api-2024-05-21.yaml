@@ -1,10 +1,10 @@
 openapi: 3.0.0
 info:
-  title: Cloudflare Calls API
+  title: Cloudflare Realtime API
   version: "1.0"
 externalDocs:
-  description: Find out more about Cloudflare Calls
-  url: https://developers.cloudflare.com/calls/
+  description: Find out more about Cloudflare Realtime
+  url: https://developers.cloudflare.com/realtime/
 servers:
   - url: https://rtc.live.cloudflare.com/v1
 paths:
