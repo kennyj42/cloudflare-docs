@@ -2969,6 +2969,20 @@
 			}
 		}
 	},
+	"secrets_store": {
+		"title": "Secrets Store",
+		"link": "/secrets-store/",
+		"properties": {
+			"availability": {
+				"title": "Availability",
+				"summary": "Available in open beta",
+				"free": "No",
+				"pro": "No",
+				"biz": "No",
+				"ent": "No"
+			}
+		}
+	},
 	"support": {
 		"title": "Support",
 		"a_tickets": {
