@@ -24,11 +24,18 @@ jobs:
       - uses: actions/cache/restore@v4
         with:
           path: |
-            node_modules/.astro
+            node_modules/.astro/assets
           key: static
 
       - run: npm ci
       - run: npm run check
+
+      - uses: reviewdog/action-eslint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          fail_level: error
+          filter_mode: nofilter
 
       - run: npm run format:core:check
       ## TODO: content formatting checks
@@ -42,7 +49,7 @@ jobs:
       - uses: actions/cache/save@v4
         with:
           path: |
-            node_modules/.astro
+            node_modules/.astro/assets
           key: static
 
       - name: Check - Validate redirects (infinite loops, sources with fragment)
@@ -50,3 +57,10 @@ jobs:
 
       - name: Tests
         run: npm run test
+
+      - name: Post PR CI failure comment
+        if: always()
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx tsx bin/post-pr-ci-failure-comment/index.ts

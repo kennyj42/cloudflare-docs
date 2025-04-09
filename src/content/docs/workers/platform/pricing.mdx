@@ -9,9 +9,9 @@ description: Workers plans and pricing information.
 
 import { GlossaryTooltip, Render } from "~/components";
 
-By default, users have access to the Workers Free plan. The Workers Free plan includes limited usage of Workers, Pages Functions and Workers KV. Read more about the [Free plan limits](/workers/platform/limits/#worker-limits).
+By default, users have access to the Workers Free plan. The Workers Free plan includes limited usage of Workers, Pages Functions, Workers KV and Hyperdrive. Read more about the [Free plan limits](/workers/platform/limits/#worker-limits).
 
-The Workers Paid plan includes Workers, Pages Functions, Workers KV, and Durable Objects usage for a minimum charge of $5 USD per month for an account. The plan includes increased initial usage allotments, with clear charges for usage that exceeds the base plan.
+The Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durable Objects usage for a minimum charge of $5 USD per month for an account. The plan includes increased initial usage allotments, with clear charges for usage that exceeds the base plan.
 
 All included usage is on a monthly basis.
 
@@ -93,7 +93,7 @@ A high traffic Worker that serves 100 million requests per month, and uses an av
 
 :::note[Custom limits]
 
-To prevent accidental runaway bills or denial-of-wallet attacks, configure the maximum amount of CPU time that can be used per invocation by [defining limits in your Worker's `wrangler.toml` file](/workers/wrangler/configuration/#limits), or via the Cloudflare dashboard (Workers & Pages > Select your Worker > Settings > CPU Limits).
+To prevent accidental runaway bills or denial-of-wallet attacks, configure the maximum amount of CPU time that can be used per invocation by [defining limits in your Worker's Wrangler file](/workers/wrangler/configuration/#limits), or via the Cloudflare dashboard (**Workers & Pages** > Select your Worker > **Settings** > **CPU Limits**).
 
 If you had a Worker on the Bundled usage model prior to the migration to Standard pricing on March 1, 2024, Cloudflare has automatically added a 50 ms CPU limit on your Worker.
 
@@ -101,7 +101,7 @@ If you had a Worker on the Bundled usage model prior to the migration to Standar
 
 :::note
 
-Some Workers Enterprise customers maintain the ability to change usage models. 
+Some Workers Enterprise customers maintain the ability to change usage models.
 
 Usage models may be changed at the individual Worker level:
 
@@ -150,6 +150,16 @@ To learn more about KV, refer to the [KV documentation](/kv/).
 
 :::
 
+## Hyperdrive
+
+<Render file="hyperdrive_pricing" />
+
+:::note[Hyperdrive documentation]
+
+To learn more about Hyperdrive, refer to the [Hyperdrive documentation](/hyperdrive/).
+
+:::
+
 ## Queues
 
 <Render file="queues_pricing" />
@@ -162,7 +172,7 @@ To learn more about Queues pricing and review billing examples, refer to [Queues
 
 ## D1
 
-D1 is available on both the [Workers Free](#workers) and [Workers Paid](#workers) plans.
+D1 is available on both the Workers Free and Workers Paid plans.
 
 <Render file="d1-pricing" />
 
@@ -174,17 +184,15 @@ Refer to [D1 Pricing](/d1/platform/pricing/) to learn more about how D1 is bille
 
 ## Durable Objects
 
-<Render file="durable_objects_pricing" />
+<Render file="do-plans-note" product="durable-objects"/>
+
+<Render file="durable-objects-pricing" product="durable-objects" params={{product:"workers"}} />
 
 :::note[Durable Objects billing examples]
 
-For more information and [examples of Durable Objects billing](/durable-objects/platform/pricing/#durable-objects-billing-examples), refer to [Durable Objects Pricing](/durable-objects/platform/pricing/).
+For more information and [examples of Durable Objects billing](/durable-objects/platform/pricing#compute-billing-examples), refer to [Durable Objects Pricing](/durable-objects/platform/pricing/).
 
 :::
-
-## Durable Objects Storage API
-
-<Render file="storage_api_pricing" />
 
 ## Vectorize
 
@@ -202,7 +210,7 @@ For example, if Worker A makes a subrequest to Worker B via a Service Binding, o
 - The total amount of CPU time used across both Worker A and Worker B
 
 :::note[Only available on Workers Standard pricing]
-If your Worker is on the deprecated [Bundled](/workers/platform/pricing/#example-pricing-bundled-usage-model) or [Unbound](/workers/platform/pricing/#example-pricing-unbound-usage-model) pricing plans, subrequests and RPC calls made via Service Bindings are charged as if they are request from the Internet. In the example above, you would be charged for two requests, one to Worker A, and one to Worker B.
+If your Worker is on the deprecated Bundled or Unbound pricing plans, incoming requests from Service Bindings are charged the same as requests from the Internet. In the example above, you would be charged for two requests, one to Worker A, and one to Worker B.
 :::
 
 ## Fine Print

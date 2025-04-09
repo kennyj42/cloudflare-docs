@@ -5,6 +5,8 @@ sidebar:
   label: Custom integration
   order: 1
 
+description: Configure custom device posture checks in Cloudflare Zero Trust using a service-to-service integration.
+
 ---
 
 import { Render } from "~/components"
@@ -21,7 +23,6 @@ sequenceDiagram
 		WARP->>External API: JSON with user and device identity
     External API-->>WARP: JSON with 0-100 result
 ```
-
 ## External API requirements
 
 The custom service provider integration works with any API service that meets the following specifications. For an example of a custom device posture integration API, refer to our [Cloudflare Workers sample code](https://github.com/cloudflare/custom-device-posture-integration-example-worker).
@@ -96,7 +97,7 @@ WARP uses an Access Client ID and Access Client Secret to securely authenticate 
 
 Next, secure the external API behind Cloudflare Access so that WARP can authenticate with the service token. To add the API endpoint to Access:
 
-1. [Create a self-hosted application](/cloudflare-one/applications/configure-apps/self-hosted-apps/) for your API endpoint.
+1. [Create a self-hosted application](/cloudflare-one/applications/configure-apps/self-hosted-public-app/) for your API endpoint.
 2. Add the following Access policy to the application. Make sure that **Action** is set to _Service Auth_ (not _Allow_).
 
 	| Action | Rule type | Selector          | Value                                 |

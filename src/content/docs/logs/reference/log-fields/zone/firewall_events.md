@@ -145,7 +145,7 @@ The description of the rule triggered by this request.
 
 Type: `string`
 
-The airport code of the Cloudflare datacenter that served this request.
+The airport code of the Cloudflare data center that served this request.
 
 ## EdgeResponseStatus
 
@@ -163,7 +163,7 @@ The kind of event, currently only possible values are: <em>firewall</em>.
 
 Type: `string`
 
-Result of the check for leaked credentials.
+Result of the check for [leaked credentials](/waf/detections/leaked-credentials/). <br />Possible results are: <em>password_leaked</em> \| <em>username_and_password_leaked</em> \| <em>username_password_similar</em> \| <em>username_leaked</em> \| <em>clean</em>.
 
 ## MatchIndex
 

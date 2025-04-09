@@ -9,7 +9,7 @@ head:
 description: Deploy a full-stack Next.js app to Cloudflare Pages
 ---
 
-import { PackageManagers } from "~/components";
+import { PackageManagers, WranglerConfig } from "~/components";
 
 Learn how to deploy full-stack (SSR) Next.js apps to Cloudflare Pages.
 
@@ -25,8 +25,8 @@ To create a new Next.js app, pre-configured to run on Cloudflare, run:
 
 <PackageManagers
 	type="create"
-	pkg="cloudflare@latest"
-	args="my-next-app --framework=next"
+	pkg="cloudflare@latest my-next-app"
+	args="--framework=next --platform=pages"
 />
 
 For more guidance on developing your app, refer to [Bindings](/pages/framework-guides/nextjs/ssr/bindings/) or the [Next.js documentation](https://nextjs.org).
@@ -43,17 +43,15 @@ First, install [@cloudflare/next-on-pages](https://github.com/cloudflare/next-on
 npm install --save-dev @cloudflare/next-on-pages
 ```
 
-### 2. Add `wrangler.toml` file
+### 2. Add Wrangler file
 
-Then, add a [`wrangler.toml`](/pages/functions/wrangler-configuration/) file to the root directory of your Next.js app:
-
-import { WranglerConfig } from "~/components";
+Then, add a [Wrangler configuration file](/pages/functions/wrangler-configuration/) to the root directory of your Next.js app:
 
 <WranglerConfig>
 
 ```toml
 name = "my-app"
-compatibility_date = "2024-07-29"
+compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 ```

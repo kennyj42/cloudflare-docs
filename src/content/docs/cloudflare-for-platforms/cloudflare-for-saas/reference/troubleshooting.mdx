@@ -66,11 +66,14 @@ You will need to ensure that the required CAA records for the selected Certifica
 For example, here are the records required to issue [Let's Encrypt](https://letsencrypt.org/docs/caa/) and [Google Trust Services](https://pki.goog/faq/#caa) certificates:
 
 ```
+example.com CAA 0 issue "pki.goog; cansignhttpexchanges=yes"
+example.com CAA 0 issuewild "pki.goog; cansignhttpexchanges=yes"
+
 example.com CAA 0 issue "letsencrypt.org"
 example.com CAA 0 issuewild "letsencrypt.org"
 
-example.com CAA 0 issue "pki.goog; cansignhttpexchanges=yes"
-example.com CAA 0 issuewild "pki.goog; cansignhttpexchanges=yes"
+example.com CAA 0 issue "ssl.com"
+example.com CAA 0 issuewild "ssl.com"
 ```
 
 More details can be found on the [CAA records FAQ](/ssl/edge-certificates/troubleshooting/caa-records/).
@@ -103,7 +106,7 @@ Consider the following solutions:
 
     </Details>
 
-- Use the [Edit Custom Hostname](/api/resources/custom_hostnames/methods/edit/) endpoint to set the `certificate_authority` parameter to `google`: this sets Google Trust Services as the CA for your custom hostnames.
+- Use the [Edit Custom Hostname](/api/resources/custom_hostnames/methods/edit/) endpoint to set the `certificate_authority` parameter to `google`: this sets Google Trust Services as the CA for your custom hostnames. In your API call, make sure to also include `method` and `type` in the `ssl` object.
 - If you are using a custom certificate for your custom hostname, refer to the [custom certificates troubleshooting](/ssl/edge-certificates/custom-certificates/troubleshooting/#lets-encrypt-chain-update).
 
 ## Custom hostname fails to verify because the zone is held

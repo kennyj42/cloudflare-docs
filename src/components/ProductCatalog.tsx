@@ -7,11 +7,13 @@ export type ProductData = CollectionEntry<"products"> & {
 	groups: string[];
 };
 
+type Filters = {
+	search: string;
+	groups: string[];
+};
+
 const ProductCatalog = ({ products }: { products: ProductData[] }) => {
-	const [filters, setFilters] = useState<{
-		search: string;
-		groups: string[];
-	}>({
+	const [filters, setFilters] = useState<Filters>({
 		search: "",
 		groups: [],
 	});
@@ -42,13 +44,13 @@ const ProductCatalog = ({ products }: { products: ProductData[] }) => {
 	useEffect(() => {
 		// On component load, check for deep-links to groups in the query param
 		const params = new URLSearchParams(window.location.search);
-		const groups = params.get("product-group");
+		const groups = params.get("product-group")?.split(",");
 
 		if (!groups) return;
 
 		setFilters({
 			...filters,
-			groups: [groups],
+			groups,
 		});
 	}, []);
 
@@ -110,6 +112,7 @@ const ProductCatalog = ({ products }: { products: ProductData[] }) => {
 				{productList.map((product) => {
 					return (
 						<a
+							key={product.data.name}
 							href={product.data.product.url}
 							className="block self-stretch rounded-md border border-solid border-gray-200 p-3 !text-inherit no-underline hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
 						>

@@ -61,13 +61,13 @@ Resolved intermediate cname domains in reverse (for example, ['com.example.alias
 
 Type: `string`
 
-The name of the colo that received the DNS query (for example, 'SJC', 'MIA', 'IAD').
+The name of the data center that received the DNS query (for example, 'SJC', 'MIA', 'IAD').
 
 ## ColoID
 
 Type: `int`
 
-The ID of the colo that received the DNS query (for example, 46, 72, 397).
+The ID of the data center that received the DNS query (for example, 46, 72, 397).
 
 ## CustomResolveDurationMs
 
@@ -81,17 +81,17 @@ Type: `string`
 
 IP and port combo used to resolve the custom dns resolver query, if any.
 
-## CustomResolverPolicyID
+## CustomResolverPolicyID (deprecated)
 
 Type: `string`
 
-Custom resolver policy UUID, if matched.
+Custom resolver policy UUID, if matched. Deprecated by ResolverPolicyID.
 
-## CustomResolverPolicyName
+## CustomResolverPolicyName (deprecated)
 
 Type: `string`
 
-Custom resolver policy name, if matched.
+Custom resolver policy name, if matched. Deprecated by ResolverPolicyName.
 
 ## CustomResolverResponse
 
@@ -164,6 +164,36 @@ ID or IDs of category that the queried domains belongs to (for example, [7,12,28
 Type: `array[string]`
 
 Name or names of category that the queried domains belongs to (for example, ['Photography', 'Weather']).
+
+## InitialResolvedIPs
+
+Type: `array[string]`
+
+The IPs used to correlate existing FQDN matching policy between Gateway DNS and Gateway proxy.
+
+## InternalDNSFallbackStrategy
+
+Type: `string`
+
+The fallback strategy applied over the internal DNS response. Empty if no fallback strategy was applied.
+
+## InternalDNSRCode
+
+Type: `int`
+
+The return code sent back by the internal DNS service.
+
+## InternalDNSViewID
+
+Type: `string`
+
+The DNS internal view identifier that was sent to the internal DNS service.
+
+## InternalDNSZoneID
+
+Type: `string`
+
+The DNS zone identifier returned by the internal DNS service.
 
 ## IsResponseCached
 
@@ -303,6 +333,30 @@ Type: `array[object]`
 
 The rdata objects (for example, [{"type":"5","data":"dns-packet-placeholder..."}]).
 
+## RedirectTargetURI
+
+Type: `string`
+
+Custom URI to which the user was redirected, if any.
+
+## RegistrationID
+
+Type: `string`
+
+The UUID of the device registration from which the HTTP request originated (for example, 'dad71818-0429-11ec-a0dc-000000000000').
+
+## RequestContextCategoryIDs
+
+Type: `array[int]`
+
+ID or IDs of the category that was sent to gateway in the EDNS request for filtering (for example, [7,12,28,122,129,163]).
+
+## RequestContextCategoryNames
+
+Type: `array[string]`
+
+Name or names of the category that was sent to gateway in the EDNS request for filtering (for example, ['Photography', 'Weather']).
+
 ## ResolvedIPCategoryIDs
 
 Type: `array[int]`
@@ -339,6 +393,18 @@ Type: `string`
 
 Result of the DNS query (for example, 'overrideForSafeSearch').
 
+## ResolverPolicyID
+
+Type: `string`
+
+Resolver policy UUID, if any matched.
+
+## ResolverPolicyName
+
+Type: `string`
+
+Resolver policy name, if any matched.
+
 ## ResourceRecords
 
 Type: `array[object]`
@@ -349,7 +415,7 @@ The rdata objects (for example, [{"type":"5","data":"dns-packet-placeholder..."}
 
 Type: `string`
 
-String that represents the JSON array with the returned resource records (for example, "[{\"name\": \"example.com\", \"type\": \"CNAME\", \"class\": \"IN\", \"ttl\": 3600, \"rdata\": \"cname.example.com.\"}]").
+String that represents the JSON array with the returned resource records (for example, '[{"name": "example.com", "type": "CNAME", "class": "IN", "ttl": 3600, "rdata": "cname.example.com."}]').
 
 ## SrcIP
 

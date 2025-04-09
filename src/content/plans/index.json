@@ -328,7 +328,7 @@
 					"free": 10,
 					"pro": 25,
 					"biz": 50,
-					"ent": 125
+					"ent": 300
 				}
 			}
 		},
@@ -437,10 +437,52 @@
 				},
 				"options": {
 					"title": "Purge options",
-					"free": "URL",
-					"pro": "URL",
-					"biz": "URL",
-					"ent": "URL, Hostname, Tag, or Prefix"
+					"free": "URL, Hostname, Tag, Prefix, and Purge Everything",
+                    "pro": "URL, Hostname, Tag, Prefix, and Purge Everything",
+                    "biz": "URL, Hostname, Tag, Prefix, and Purge Everything",
+                    "ent": "URL, Hostname, Tag, Prefix, and Purge Everything"
+				}
+			}
+		},
+		"purge_limits": {
+			"title": "Purge limits for hostname, tag, prefix URL, and purge everything.",
+			"link": "/cache/how-to/purge-cache/",
+			"properties": {
+				"availability": {
+					"title": "Requests",
+					"summary": "Available on all plans",
+					"free": "5 requests per minute",
+					"pro": "5 requests per second",
+					"biz": "10 requests per second",
+					"ent": "50 requests per second"
+				},
+                "limits_bucket": {
+                    "title": "Bucket size",
+                    "free": "25",
+                    "pro": "25",
+                    "biz": "50",
+                    "ent": "500"
+                },
+                "limits_operations": {
+                    "title": "Max operations per request",
+                    "free": "100",
+                    "pro": "100",
+                    "biz": "100",
+                    "ent": "100"
+				}
+			}
+		},
+		"single_file_purge": {
+			"title": "Single file purge",
+			"link": "/cache/how-to/purge-cache/purge-by-single-file/",
+			"properties": {
+				"availability": {
+					"title": "URLs",
+					"summary": "Available on all plans",
+					"free": "800 URLs per second",
+					"pro": "1500 URLs per second",
+					"biz": "1500 URLs per second",
+					"ent": "3000 URLs per second"
 				}
 			}
 		},
@@ -657,7 +699,7 @@
 				},
 				"maximum_duration": {
 					"title": "Maximum time interval",
-					"free": "2 days",
+					"free": "7 days",
 					"pro": "31 days",
 					"biz": "31 days",
 					"ent": "31 days"
@@ -1040,7 +1082,7 @@
 		},
 		"true_client_ip_header": {
 			"title": "True Client IP Header",
-			"link": "/fundamentals/reference/http-request-headers/#true-client-ip-enterprise-plan-only",
+			"link": "/fundamentals/reference/http-headers/#true-client-ip-enterprise-plan-only",
 			"properties": {
 				"availability": {
 					"title": "Availability",
@@ -1106,10 +1148,10 @@
 				},
 				"url_redirects": {
 					"title": "URL redirects across lists",
-					"free": "20",
-					"pro": "500",
-					"biz": "500",
-					"ent": "10,000"
+					"free": "10,000",
+					"pro": "25,000",
+					"biz": "50,000",
+					"ent": "1,000,000"
 				}
 			}
 		},
@@ -1127,10 +1169,10 @@
 				},
 				"num_rules": {
 					"title": "Number of rules",
-					"free": 5,
+					"free": 10,
 					"pro": 25,
 					"biz": 50,
-					"ent": 125
+					"ent": 300
 				}
 			}
 		},
@@ -1151,7 +1193,7 @@
 					"free": 10,
 					"pro": 25,
 					"biz": 50,
-					"ent": 125
+					"ent": 300
 				}
 			}
 		},
@@ -1172,7 +1214,35 @@
 					"free": 10,
 					"pro": 25,
 					"biz": 50,
-					"ent": 125
+					"ent": 300
+				}
+			}
+		},
+		"custom_errors": {
+			"title": "Custom Errors",
+			"link": "/rules/custom-errors/",
+			"properties": {
+				"availability": {
+					"title": "Availability",
+					"summary": "Available on all plans",
+					"free": "No",
+					"pro": "Yes",
+					"biz": "Yes",
+					"ent": "Yes"
+				},
+				"num_rules": {
+					"title": "Number of rules",
+					"free": 0,
+					"pro": 25,
+					"biz": 50,
+					"ent": 300
+				},
+				"num_assets": {
+					"title": "Number of assets",
+					"free": 0,
+					"pro": 25,
+					"biz": 50,
+					"ent": 300
 				}
 			}
 		},
@@ -1193,7 +1263,7 @@
 					"free": 10,
 					"pro": 25,
 					"biz": 50,
-					"ent": 125
+					"ent": 300
 				},
 				"override_host_header": {
 					"title": "Override Host header",
@@ -1248,7 +1318,7 @@
 			}
 		},
 		"snippets": {
-			"title": "Snippets (beta)",
+			"title": "Snippets",
 			"link": "/rules/snippets/",
 			"properties": {
 				"availability": {
@@ -1262,9 +1332,9 @@
 				"rules": {
 					"title": "Number of snippets",
 					"free": 0,
-					"pro": 10,
-					"biz": 25,
-					"ent": 50
+					"pro": 25,
+					"biz": 50,
+					"ent": 300
 				},
 				"subrequests": {
 					"title": "Number of [[GLOSSARY_TOOLTIP_SNIPPETS_SUBREQUEST]]",
@@ -1292,7 +1362,7 @@
 					"free": 10,
 					"pro": 25,
 					"biz": 50,
-					"ent": 125
+					"ent": 300
 				},
 				"p_wildcard_support": {
 					"title": "Wildcard support",
@@ -1327,7 +1397,7 @@
 					"free": 10,
 					"pro": 25,
 					"biz": 50,
-					"ent": 100
+					"ent": 300
 				},
 				"regex_support": {
 					"title": "Regex support",
@@ -1502,7 +1572,7 @@
 				},
 				"dashboard_features": {
 					"title": "Dashboard features",
-					"free": "Activity log only",
+					"free": "Sampled logs only",
 					"pro": "All",
 					"biz": "All",
 					"ent": "All"
@@ -1741,6 +1811,15 @@
 					"free": "No",
 					"pro": "No",
 					"biz": "One field only",
+					"ent": "Yes"
+				},
+				"g_fw_for_ai": {
+					"title": "Firewall for AI (beta)",
+					"summary": "Enterprise-only",
+					"link": "/waf/detections/firewall-for-ai/",
+					"free": "No",
+					"pro": "No",
+					"biz": "No",
 					"ent": "Yes"
 				}
 			}
@@ -2015,22 +2094,34 @@
 			"title": "Turnstile",
 			"link": "/turnstile/",
 			"properties": {
+				"pricing": {
+					"title": "Pricing",
+					"link": "https://www.cloudflare.com/application-services/products/turnstile/#Page-Pricing-AS",
+					"free": "Free",
+					"ent": "Contact sales"
+				},
 				"widgets": {
 					"title": "Number of widgets",
 					"link": "/turnstile/concepts/widget/",
-					"free": "10 widgets",
+					"free": "Up to 20 widgets",
 					"ent": "Unlimited"
 				},
-				"modes": {
-					"title": "Interactivity modes",
-					"link": "/turnstile/get-started/client-side-rendering/#appearance-modes",
-					"free": "Managed, Invisible, Interactive",
-					"ent": "Managed, Invisible, Interactive"
+				"hostname_management": {
+					"title": "Hostname management",
+					"link": "/turnstile/concepts/hostname-management/",
+					"free": "15 hostnames per widget",
+					"ent": "Maximum of 100 hostnames per widget"
 				},
-				"offlabel": {
-					"title": "Offlabel (remove Cloudflare branding)",
+				"anyhostname": {
+					"title": "Any hostname widget (no preconfigured hostnames)",
 					"free": "No",
 					"ent": "Yes"
+				},
+				"graphql_analytics": {
+					"title": "Analytics lookback",
+					"link": "/turnstile/turnstile-analytics/",
+					"free": "7 days maximum",
+					"ent": "30 days maximum"
 				},
 				"preclearance": {
 					"title": "Pre-clearance support",
@@ -2038,21 +2129,14 @@
 					"free": "Yes",
 					"ent": "Yes"
 				},
-				"hostname_validation": {
-					"title": "Hostname validation",
-					"link": "/turnstile/concepts/hostname-management/",
-					"free": "10 hostnames per widget",
-					"ent": "Maximum of 200 hostnames per widget. <br> The `any hostname` entitlement removes hostname as a requirement and allows you to use the widget anywhere."
-				},
-				"graphql_analytics": {
-					"title": "Analytics time window",
-					"link": "/turnstile/turnstile-analytics/",
-					"free": "30 days maximum",
-					"ent": "30 days maximum"
-				},
 				"ephemeral_ids": {
 					"title": "Ephemeral IDs",
 					"link": "/turnstile/concepts/ephemeral-id/",
+					"free": "No",
+					"ent": "Yes"
+				},
+				"offlabel": {
+					"title": "Offlabel (remove Cloudflare branding)",
 					"free": "No",
 					"ent": "Yes"
 				}
@@ -2454,11 +2538,11 @@
 				},
 				"quantity": {
 					"title": "Certificates included",
-					"free": 0,
-					"pro": 0,
-					"pro_plus": 1,
-					"biz": "1 (Modern)\n1 (Legacy)",
-					"ent": "1 (Modern) (can purchase more)\n1 (Legacy) (can purchase more)"
+					"free": "0",
+					"pro": "0",
+					"pro_plus": "1",
+					"biz": "1 Modern and 1 Legacy",
+					"ent": "1 Modern (can purchase more) and 1 Legacy (can purchase more)"
 				}
 			}
 		},
@@ -2564,6 +2648,13 @@
 					"pro": "Yes",
 					"biz": "Yes",
 					"ent": "Yes"
+				},
+				"per_hostname": {
+					"title": "Per-hostname",
+					"free": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)",
+					"pro": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)",
+					"biz": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)",
+					"ent": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)"
 				}
 			}
 		},
@@ -2600,17 +2691,17 @@
 				"b_initial_quota": {
 					"title": "Hostnames included",
 					"summary": "Varies",
-					"free": 100,
-					"pro": 100,
-					"biz": 100,
-					"ent": 0
+					"free": "100",
+					"pro": "100",
+					"biz": "100",
+					"ent": "0"
 				},
 				"c_max_hostnames": {
 					"title": "Max hostnames",
-					"free": 5000,
-					"pro": 5000,
-					"biz": 5000,
-					"ent": "Unlimited, but contact sales if using over 5000."
+					"free": "5,000",
+					"pro": "5,000",
+					"biz": "5,000",
+					"ent": "Unlimited, but contact sales if using over 5,000."
 				},
 				"custom_analytics": {
 					"title": "[Custom analytics](/cloudflare-for-platforms/cloudflare-for-saas/hostname-analytics/)",
@@ -2787,6 +2878,22 @@
 				}
 			}
 		},
+		"custom_cipher_suites": {
+			"title": "Custom cipher suites",
+			"link": "/ssl/edge-certificates/additional-options/cipher-suites/customize-cipher-suites/",
+			"paid_add_on": true,
+			"paid_add_on_plans": ["free", "pro", "biz", "ent"],
+			"properties": {
+				"availability": {
+					"title": "Availability",
+					"summary": "Custom cipher suites are available for domains that have purchased [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/) and are currently using a [full DNS setup](/dns/zone-setups/full-setup/).",
+					"free": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)",
+					"pro": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)",
+					"biz": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)",
+					"ent": "Included with [Advanced Certificate Manager](/ssl/edge-certificates/advanced-certificate-manager/)"
+				}
+			}
+		},
 		"total_tls": {
 			"title": "Total TLS",
 			"link": "/ssl/edge-certificates/additional-options/total-tls/",
@@ -2859,6 +2966,20 @@
 					"biz": "No",
 					"ent": "Yes"
 				}
+			}
+		}
+	},
+	"secrets_store": {
+		"title": "Secrets Store",
+		"link": "/secrets-store/",
+		"properties": {
+			"availability": {
+				"title": "Availability",
+				"summary": "Available in open beta",
+				"free": "No",
+				"pro": "No",
+				"biz": "No",
+				"ent": "No"
 			}
 		}
 	},
@@ -3125,6 +3246,22 @@
 					"pro": "No",
 					"biz": "Yes",
 					"ent": "Yes"
+				},
+				"turnstile_widget_mode": {
+					"title": "Turnstile Widget Mode",
+					"link": "/waiting-room/how-to/create-waiting-room/",
+					"free": "No",
+					"pro": "No",
+					"biz": "Invisible only",
+					"ent": "Invisible (default)\n\n<em>With add-on</em>\nAll options"
+				},
+				"turnstile_fail_action": {
+					"title": "Turnstile Fail Action",
+					"link": "/waiting-room/how-to/create-waiting-room/",
+					"free": "No",
+					"pro": "No",
+					"biz": "Log only",
+					"ent": "Log only (default)\n\n<em>With add-on</em>\nInfinite queue"
 				}
 			}
 		}
